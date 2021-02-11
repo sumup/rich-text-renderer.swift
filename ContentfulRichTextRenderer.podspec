@@ -19,7 +19,10 @@ Pod::Spec.new do |spec|
 
   spec.source_files = "Sources/RichTextRenderer/**/*.swift"
 
-  spec.dependency 'AlamofireImage', '~> 4.1.0'
   spec.dependency 'Contentful', '~> 5.2.0'
+
+  # Do not include file that has dependency on Alamofire
+  spec.ios.exclude_files = 'Sources/RichTextRenderer/NodeRenderers/ResourceLinkBlock/ResourceLinkBlockImaveView.swift'
+
 end
 
